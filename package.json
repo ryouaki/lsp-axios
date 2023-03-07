@@ -1,0 +1,42 @@
+{
+  "name": "mini-axios",
+  "version": "1.0.0",
+  "description": "Only ajax for browser with promise.",
+  "main": "index.js",
+  "module": "dist/mini-axios.umd.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=dev webpack-dev-server --config webpack.config.js",
+    "build": "cross-env NODE_ENV=prod webpack --config webpack.config.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "dev": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryouaki/mini-axios.git"
+  },
+  "keywords": [
+    "axios",
+    "ajax",
+    "http",
+    "browser"
+  ],
+  "author": "ryouaki (46517115@qq.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ryouaki/mini-axios/issues"
+  },
+  "homepage": "https://github.com/ryouaki/mini-axios#readme",
+  "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@koa/cors": "^3.4.1",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.5.0",
+    "koa": "^2.13.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.1",
+    "jest": "^27.5.1"
+  }
+}
