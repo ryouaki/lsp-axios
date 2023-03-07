@@ -1,6 +1,6 @@
 {
   "name": "lsp-axios",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Only ajax for browser with promise.",
   "main": "index.js",
   "module": "dist/lsp-axios.umd.js",
