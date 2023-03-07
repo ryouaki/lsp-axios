@@ -28,19 +28,19 @@ Just for Ajax. Only for browser with small size. Used the same as Axios and just
   // The last function in the array must return a string or an instance of Buffer, ArrayBuffer,
   // FormData or Stream
   // You may modify the headers object.
-  transformRequest: [function (data, headers) {
+  transformRequest: function (data, headers) {
     // Do whatever you want to transform the data
 
     return data;
-  }],
+  },
 
   // `transformResponse` allows changes to the response data to be made before
   // it is passed to then/catch
-  transformResponse: [function (data) {
+  transformResponse: function (data) {
     // Do whatever you want to transform the data
 
     return data;
-  }],
+  },
 
   // `headers` are custom headers to be sent
   headers: {'X-Requested-With': 'XMLHttpRequest'},
@@ -126,7 +126,7 @@ Just for Ajax. Only for browser with small size. Used the same as Axios and just
 
   // `cancelToken` specifies a cancel token that can be used to cancel the request
   // (see Cancellation section below for details)
-  cancel: new CancelToken(function (cancel) {
+  cancel: new Cancel(function (cancel) {
   })
 }
 

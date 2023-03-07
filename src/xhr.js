@@ -41,7 +41,9 @@ module.exports = isSupportXhr && function (config) {
       method = 'GET',
       baseURL = '',
       url = '',
-      timeout = 5000
+      timeout = 5000,
+      transformResponse = data => data,
+      transformRequest = (data, _) => data
     } = config;
 
     const request = new XMLHttpRequest();
@@ -82,11 +84,11 @@ module.exports = isSupportXhr && function (config) {
         resHeaders[header] = value;
       })
 
-      const response = {
+      const response = transformResponse({
         data: responseData,
         status: request.status,
         headers: resHeaders
-      }
+      })
 
       resolve(response);
 
@@ -173,6 +175,6 @@ module.exports = isSupportXhr && function (config) {
       config.cancel.subscribe(doCancel);
     }
 
-    request.send(data || null);
+    request.send(transformRequest(data || null));
   })
 }

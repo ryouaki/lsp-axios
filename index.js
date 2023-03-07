@@ -2,6 +2,7 @@ const { methods } = require('./src/constants');
 const { version } = require('./src/version');
 const InterceptorManager = require('./src/interceptor');
 const xhr = require('./src/xhr');
+const CancelToken = require('./src/cancel');
 
 class Axios {
   /**
@@ -39,7 +40,7 @@ class Axios {
     // 兼容请求方法，并兜底get请求, 如果不是合法的http方法，则默认转get方法
     config.method = methods[(config.method || this.default.method).toLowerCase()] || 'get';
 
-    const len = this.interceptors.request.size();
+    let len = this.interceptors.request.size();
     const newConfig = config;
 
     // 执行前置拦截器，如果返回false表示需要中断执行。
@@ -69,7 +70,15 @@ class Axios {
     } catch (e) {
       return Promise.reject(e);
     }
+    
     // 执行后置拦截器
+    len = this.interceptors.response.size();
+    for (let i = 0; i < len; i++) {
+      const handle = this.interceptors.response.get(i);
+      resultPromise = resultPromise.then(handle.fulfilled, handle.rejected);
+    }
+
+    return resultPromise;
   }
 }
 
@@ -82,5 +91,6 @@ for (let key in methods) {
 
 const axios = new Axios();
 axios.Axios = Axios;
+axios.CancelToken = CancelToken;
 
 module.exports = axios;
