@@ -1,5 +1,10 @@
 # lsp-axios
-Just for Ajax.
+Just for Ajax. Only for browser with small size. Used the same as Axios and just 4kb.
+
+| name | mode | size |
+| -- | -- | -- |
+| axios | umd | 32kb |
+| lsp-axios | umd | 4kb |
 
 # apis
 
