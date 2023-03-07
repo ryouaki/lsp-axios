@@ -1,6 +1,7 @@
 const { methods } = require('./src/constants');
 const { version } = require('./src/version');
 const InterceptorManager = require('./src/interceptor');
+const xhr = require('./src/xhr');
 
 class Axios {
   /**
@@ -73,7 +74,7 @@ class Axios {
 }
 
 for (let key in methods) {
-  Axios.prototype[key] = function Methodhandle(url, config) {
+  Axios.prototype[key] = function Methodhandle(url, config = {}) {
     config.method = key;
     return this.request(url, config);
   }
