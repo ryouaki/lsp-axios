@@ -1,7 +1,7 @@
 {
   "name": "lsp-axios",
-  "version": "1.0.5",
-  "description": "Only ajax for browser with promise.",
+  "version": "1.0.6",
+  "description": "Only ajax for browser with promise. the same as axios with only 4.5kb.",
   "main": "index.js",
   "module": "dist/lsp-axios.umd.js",
   "scripts": {
