@@ -1,4 +1,4 @@
-# mini-axios
+# lsp-axios
 Just for Ajax.
 
 # apis

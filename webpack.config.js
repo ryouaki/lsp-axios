@@ -5,14 +5,14 @@ const package = require('./package.json');
 module.exports = (env) => {
   const config = {
     entry: {
-      "mini-axios": './index.js'
+      "lsp-axios": './index.js'
     },
     mode: 'production',
     output: {
       path: path.join(__dirname, 'dist'),
-      filename: `mini-axios.umd.${package.version}.js`,
+      filename: `lsp-axios.umd.${package.version}.js`,
       libraryTarget: 'umd',
-      library: 'mini-axios'
+      library: 'lsp-axios'
     },
     target: ['web', 'es5'],
     module: {

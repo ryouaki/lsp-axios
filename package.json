@@ -1,9 +1,9 @@
 {
-  "name": "mini-axios",
+  "name": "lsp-axios",
   "version": "1.0.0",
   "description": "Only ajax for browser with promise.",
   "main": "index.js",
-  "module": "dist/mini-axios.umd.js",
+  "module": "dist/lsp-axios.umd.js",
   "scripts": {
     "start": "cross-env NODE_ENV=dev webpack-dev-server --config webpack.config.js",
     "build": "cross-env NODE_ENV=prod webpack --config webpack.config.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryouaki/mini-axios.git"
+    "url": "git+https://github.com/ryouaki/lsp-axios.git"
   },
   "keywords": [
     "axios",
@@ -23,9 +23,9 @@
   "author": "ryouaki (46517115@qq.com)",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ryouaki/mini-axios/issues"
+    "url": "https://github.com/ryouaki/lsp-axios/issues"
   },
-  "homepage": "https://github.com/ryouaki/mini-axios#readme",
+  "homepage": "https://github.com/ryouaki/lsp-axios#readme",
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@koa/cors": "^3.4.1",
